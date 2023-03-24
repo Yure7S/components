@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Button</title>
+   <style>
+      * {
+         margin: 0px;
+         padding: 0px;
+         font-family: Helvetica, sans-serif;
+         text-decoration: none;
+         color: black;
+      }
+
+      body {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         vertical-align: middle;
+      }
+
+      a {
+         padding: 13px 28px;
+         border-radius: 7px;
+         border: 4px solid black;
+         background-color: yellow;
+         font-weight: bold;
+         font-size: 18px;
+         box-shadow: 0px 0px 0px black;
+         transition: 0.3s ease;
+         overflow: hidden;
+         position: relative;
+         text-shadow: 0px 0px 5px yellow;
+      }
+
+      a::before {
+         content: " ";
+         background-color: red;
+         height: 100px;
+         width: 100px;
+      }
+
+      a:hover {
+         padding: 13px 30px 13px 20px;
+         transform: translateX(10px) translateY(-10px);
+         box-shadow: -10px 10px 0px black;
+      }
+
+      a:hover .box {
+         left: calc(100% - 20px);
+         opacity: 1;
+      }
+
+      .box {
+         background-color: rgb(255, 0, 0);
+         height: 40%;
+         width: 100%;
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         left: 100%;
+         opacity: 0;
+         transition: 0.3s ease;
+         -webkit-clip-path: polygon(100% 0%, 100% 48%, 100% 100%, 0 100%, 5% 50%, 0 0);
+         clip-path: polygon(100% 0%, 100% 48%, 100% 100%, 0 100%, 5% 50%, 0 0);
+      }
+   </style>
+</head>
+
+<body>
+   <a href="#">
+      <div class="box"></div>
+      My Button
+   </a>
+</body>
+
+</html>
